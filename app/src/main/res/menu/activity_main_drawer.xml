@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/clienteFragment"
+            android:icon="@drawable/ic_menu_cliente"
+            android:title="@string/menu_Cliente" />
+        <item
+            android:id="@+id/ingresoFragment"
+            android:icon="@drawable/ic_menu_ingreso"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/localFragment"
+            android:icon="@drawable/ic_menu_local"
+            android:title="@string/menu_Local" />
+    </group>
+</menu>

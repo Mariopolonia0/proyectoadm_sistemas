@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/clienteFragment">
+
+    <fragment
+        android:id="@+id/clienteFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.cliente.ClienteFragment"
+        android:label="@string/menu_Cliente"
+        tools:layout="@layout/cliente_fragment" >
+        <action
+            android:id="@+id/action_clienteFragment_to_agregarClienteFragment"
+            app:destination="@id/agregarClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingresoFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.ingreso.IngresoFragment"
+        android:label="@string/menu_Ingreso"
+        tools:layout="@layout/ingreso_fragment" />
+    <fragment
+        android:id="@+id/localFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.local.LocalFragment"
+        android:label="@string/menu_Local"
+        tools:layout="@layout/local_fragment" />
+    <fragment
+        android:id="@+id/agregarClienteFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.cliente.AgregarClienteFragment"
+        android:label="@string/TituloFramerEditarCliente"
+        tools:layout="@layout/agregar_cliente_fragment">
+
+    </fragment>
+</navigation>

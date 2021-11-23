@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">org_adm_sistema</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_Cliente">Cliente</string>
+    <string name="menu_Local">Local</string>
+    <string name="menu_Ingreso">Ingreso</string>
+    <string name="nullimagen">null</string>
+
+
+    <!-- registro Clientes -->
+    <string name="TituloFramerEditarCliente">Editar Cliente</string>
+    <string name="textNombre">Nombre</string>
+    <string name="textApellido">Apellido</string>
+    <string name="textDirrecion">Dirrecion</string>
+    <string name="textNumeroTelefono">Numero Telefono</string>
+    <string name="textReferencia">Referencia</string>
+    <string name="todo">TODO</string>
+
+    <!--dialog-->
+    <string name="titulo">ALERTA</string>
+    <string name="mensaje">Hay Campo Vacio Y Estan Marcado En Rojo</string>
+    <string name="mensaje2">Se Guardo El Cliente</string>
+    <string name="mensaje3">se Modifico El Cliente </string>
+
+    <!--vista cliente-->
+    <string name="nombrevistacliente">Nombre</string>
+    <string name="Dirrecionvistacliente">Dirrecion</string>
+    <string name="NumeroTelefonovistacliente">Numero Telefono</string>
+
+
+</resources>
