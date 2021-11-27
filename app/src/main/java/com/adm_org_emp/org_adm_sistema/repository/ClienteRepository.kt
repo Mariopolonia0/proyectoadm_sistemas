@@ -14,7 +14,12 @@ class ClienteRepository(private val database :ClienteDb) {
         database.clienteDao.update(cliente)
     }
 
+    fun delete (cliente: Cliente){
+        database.clienteDao.delete(cliente)
+    }
+
     fun allCliente(): LiveData<List<Cliente>> {
         return database.clienteDao.getAllCliente()
     }
+
 }

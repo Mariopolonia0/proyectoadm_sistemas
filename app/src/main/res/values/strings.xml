@@ -25,14 +25,22 @@
 
     <!--dialog-->
     <string name="titulo">ALERTA</string>
-    <string name="mensaje">Hay Campo Vacio Y Estan Marcado En Rojo</string>
-    <string name="mensaje2">Se Guardo El Cliente</string>
-    <string name="mensaje3">se Modifico El Cliente </string>
+    <string name="mensajefaltacampo">Hay Campo Vacio Y Estan Marcado En Rojo</string>
+    <string name="mensajeguardar">Desea Guardo El Cliente</string>
+    <string name="mensajemodificar">Desea Modifico El Cliente </string>
+    <string name="mensajeeliminar">Desea Eliminar El Cliente </string>
 
     <!--vista cliente-->
     <string name="nombrevistacliente">Nombre</string>
     <string name="Dirrecionvistacliente">Dirrecion</string>
     <string name="NumeroTelefonovistacliente">Numero Telefono</string>
 
-
+    <!-- registro Local -->
+    <string name="TituloFramerEditarLocal">Editar Local</string>
+    <string name="textNombreLocal">Nombre</string>
+    <string name="textMontoRentaLocal">Monto Renta</string>
+    <string name="textTipoLocal">Tipo Local</string>
+    <string name="textFechaRegistroLocal">Fecha Registro</string>
+    <string name="textselecionarClienteLocal">Seleccionar Cliente</string>
+    <string name="todoLocal">TODO</string>
 </resources>

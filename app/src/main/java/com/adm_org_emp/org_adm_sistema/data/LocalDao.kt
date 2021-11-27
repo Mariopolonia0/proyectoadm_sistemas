@@ -1,23 +1,30 @@
 package com.adm_org_emp.org_adm_sistema.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import com.adm_org_emp.org_adm_sistema.models.Cliente
+import com.adm_org_emp.org_adm_sistema.models.Ingreso
 import com.adm_org_emp.org_adm_sistema.models.Local
 
 @Dao
 interface LocalDao {
     @Insert
-    suspend fun insert(local: Local)
+    fun insert(local: Local)
 
     @Update
-    suspend fun update(local: Local)
+    fun update(local: Local)
+
+    @Delete
+    fun delete(local: Local)
 
     @Query("SELECT * FROM local WHERE LocalId= :key")
-    suspend fun find(key :Long): Local
+    fun find(key :Long): Local
 
     @Query("SELECT * FROM local ORDER BY LocalId DESC")
-    fun getAllProducto(): LiveData<List<Local>>
+    fun getAllLocal(): LiveData<List<Local>>
+
+    @Query("SELECT * FROM local WHERE ClienteId = :key")
+    fun getclienteconlocal(key: Long): List<Local>
+
+
 }

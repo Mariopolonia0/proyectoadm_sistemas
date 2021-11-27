@@ -49,7 +49,7 @@ class AgregarClienteFragment : Fragment() {
             if (!Validar()){
             MaterialAlertDialogBuilder(it.context)
                 .setTitle(resources.getString(R.string.titulo))
-                .setMessage(resources.getString(R.string.mensaje))
+                .setMessage(resources.getString(R.string.mensajefaltacampo))
                 .show()
             }else{
                 //si el agumento esta nulo es que hay que agregar un cliente nuebo
@@ -58,7 +58,7 @@ class AgregarClienteFragment : Fragment() {
                     findNavController().navigateUp()
                     MaterialAlertDialogBuilder(it.context)
                         .setTitle(resources.getString(R.string.titulo))
-                        .setMessage(resources.getString(R.string.mensaje3))
+                        .setMessage(resources.getString(R.string.mensajeguardar))
                         .show()
                 }else{
                     //aqui se crea un cliente nuevo para enviarlo al viewmodel
@@ -66,7 +66,7 @@ class AgregarClienteFragment : Fragment() {
                     findNavController().navigateUp()
                     MaterialAlertDialogBuilder(it.context)
                         .setTitle(resources.getString(R.string.titulo))
-                        .setMessage(resources.getString(R.string.mensaje2))
+                        .setMessage(resources.getString(R.string.mensajemodificar))
                         .show()
                 }
             }

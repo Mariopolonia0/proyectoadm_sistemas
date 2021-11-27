@@ -1,15 +1,21 @@
 package com.adm_org_emp.org_adm_sistema.ui.cliente
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.lifecycle.LiveData
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.adm_org_emp.org_adm_sistema.R
+import com.adm_org_emp.org_adm_sistema.data.ClienteDao
+import com.adm_org_emp.org_adm_sistema.data.ClienteDb
+import com.adm_org_emp.org_adm_sistema.data.LocalDb
 import com.adm_org_emp.org_adm_sistema.databinding.VistaClienteBinding
 import com.adm_org_emp.org_adm_sistema.models.Cliente
+import com.adm_org_emp.org_adm_sistema.models.Local
+import com.adm_org_emp.org_adm_sistema.repository.ClienteRepository
+import com.adm_org_emp.org_adm_sistema.repository.LocalRepository
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>()  {
 
@@ -49,13 +55,25 @@ class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>() 
 
             binding.imageButton.setOnClickListener{
                 binding.root.findNavController().navigate(R.id.agregarClienteFragment,bundle)
-
             }
 
             binding.imageButton2.setOnClickListener{
-                binding.textcolor.setBackgroundColor(Color.parseColor("#FF0000"))
-            }
 
+                val localRepository = LocalRepository(LocalDb.getInstace(it.context))
+                var local : List<Local> = localRepository.getclienteconlocal(item.ClienteId)
+                if(local == null){
+                //    val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
+               // clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
+                MaterialAlertDialogBuilder(it.context)
+                    .setTitle(R.string.titulo)
+                    .setMessage(R.string.mensajeeliminar)
+                    .show()
+
+                }else{
+                    binding.mostranombreTextView.text = local.get(1).ClienteId.toString()
+                }
+
+            }
             binding.mostranombreTextView.text = item.Nombre
             binding.mostrarapellidoTextView.text = item.Apellido
             binding.mostardireccionTextView.text = item.Dirrecion

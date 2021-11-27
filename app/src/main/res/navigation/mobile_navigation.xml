@@ -23,7 +23,12 @@
         android:id="@+id/localFragment"
         android:name="com.adm_org_emp.org_adm_sistema.ui.local.LocalFragment"
         android:label="@string/menu_Local"
-        tools:layout="@layout/local_fragment" />
+        tools:layout="@layout/local_fragment" >
+        <action
+            android:id="@+id/action_localFragment_to_editalLocalFragment"
+            app:destination="@id/editalLocalFragment"
+            app:popUpTo="@id/localFragment" />
+    </fragment>
     <fragment
         android:id="@+id/agregarClienteFragment"
         android:name="com.adm_org_emp.org_adm_sistema.ui.cliente.AgregarClienteFragment"
@@ -31,4 +36,9 @@
         tools:layout="@layout/agregar_cliente_fragment">
 
     </fragment>
+    <fragment
+        android:id="@+id/editalLocalFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.local.EditalLocalFragment"
+        android:label="edital_local_fragment"
+        tools:layout="@layout/edital_local_fragment" />
 </navigation>

@@ -11,7 +11,7 @@ data class Local(
     var Nombre : String,
     var MontoRenta : Double,
     var TipoLocal : String,
-    var FechaRegistro : Date,
+    var FechaRegistro : String,
     var ClienteId : Long
 )
 

@@ -9,7 +9,7 @@ data class Ingreso(
     @PrimaryKey (autoGenerate = true)
     var IngresoId : Long,
     var ClienteId : Long,
-    var FechaCumplida :Date,
-    var FechaPagado :Date,
+    var FechaCumplida :String,
+    var FechaPagado :String,
     var MontoTotal : Double
 )
