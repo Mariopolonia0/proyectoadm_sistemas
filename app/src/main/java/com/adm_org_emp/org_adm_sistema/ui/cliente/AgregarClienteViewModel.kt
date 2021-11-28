@@ -22,7 +22,7 @@ class AgregarClienteViewModel(app: Application) : ViewModel() {
     fun Update (cliente:Cliente) = viewModelScope.launch {
         clienteRopository.update(cliente)
     }
-    fun delete (cliente:Cliente) = viewModelScope.launch {
+    fun Delete (cliente:Cliente) = viewModelScope.launch {
         clienteRopository.delete(cliente)
     }
 

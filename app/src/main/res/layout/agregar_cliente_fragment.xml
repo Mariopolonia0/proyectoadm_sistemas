@@ -107,7 +107,7 @@
         android:clickable="true"
         android:contentDescription="@string/nullimagen"
         android:focusable="true"
-        android:src="@drawable/ic_icono_guardar"
+        android:src="@drawable/ic_guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

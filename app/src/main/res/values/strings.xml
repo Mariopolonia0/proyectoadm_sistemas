@@ -29,11 +29,22 @@
     <string name="mensajeguardar">Desea Guardo El Cliente</string>
     <string name="mensajemodificar">Desea Modifico El Cliente </string>
     <string name="mensajeeliminar">Desea Eliminar El Cliente </string>
+    <string name="mensajeagregarclientelocal">Desea Guardar El Local Sin Cliente</string>
 
     <!--vista cliente-->
     <string name="nombrevistacliente">Nombre</string>
     <string name="Dirrecionvistacliente">Dirrecion</string>
     <string name="NumeroTelefonovistacliente">Numero Telefono</string>
+
+
+
+    <!--vista local-->
+    <string name="nombrevistalocal">Nombre</string>
+    <string name="MontovistaLocal">Precio</string>
+    <string name="TipoLocalvista">Tipo</string>
+    <string name="fecharegistroLocal">Fecha Registro</string>
+    <string name="clienteLocal">Inquilino</string>
+
 
     <!-- registro Local -->
     <string name="TituloFramerEditarLocal">Editar Local</string>
@@ -43,4 +54,13 @@
     <string name="textFechaRegistroLocal">Fecha Registro</string>
     <string name="textselecionarClienteLocal">Seleccionar Cliente</string>
     <string name="todoLocal">TODO</string>
+
+    <!-- registro Factura -->
+    <string name="TituloFramerEditarIngreso">Cobrar Ingreso</string>
+    <string name="Cliente">Cliente</string>
+    <string name="FechaRentacumplida">Fecha De Renta cumplida</string>
+    <string name="FechaPagoRealizado">Fecha De Pago Realizado</string>
+    <string name="TipoDePago">Tipo De Pago</string>
+    <string name="MontoTotal">Monto Total</string>
+
 </resources>

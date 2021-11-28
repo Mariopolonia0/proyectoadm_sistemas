@@ -37,6 +37,14 @@ class LocalFragment : Fragment() {
             findNavController().navigate(R.id.action_localFragment_to_editalLocalFragment)
         }
 
+        binding.listaLocalRecyclerView.adapter = LocalAdacter()
+        val adacter = binding.listaLocalRecyclerView.adapter as LocalAdacter
+
+        viewModel.listaLocal.observe(viewLifecycleOwner,{
+            adacter.submitList(it)
+        })
+
+
     }
 
     override fun onDestroyView() {

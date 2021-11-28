@@ -22,4 +22,10 @@ class ClienteRepository(private val database :ClienteDb) {
         return database.clienteDao.getAllCliente()
     }
 
+    fun buscarCliente(long: Long): Cliente {
+        return database.clienteDao.find(long)
+    }
+    fun getallClineteSpinner(): List<Cliente> {
+        return database.clienteDao.getAllClienteSpinner()
+    }
 }

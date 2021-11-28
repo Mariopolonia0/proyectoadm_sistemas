@@ -12,4 +12,5 @@ data class Ingreso(
     var FechaCumplida :String,
     var FechaPagado :String,
     var MontoTotal : Double
+
 )

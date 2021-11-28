@@ -53,27 +53,28 @@ class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>() 
                 "Referencia" to item.Referencia
             )
 
-            binding.imageButton.setOnClickListener{
+            binding.imageButtonModicar.setOnClickListener{
                 binding.root.findNavController().navigate(R.id.agregarClienteFragment,bundle)
             }
 
-            binding.imageButton2.setOnClickListener{
+            binding.imageButtonDelete.setOnClickListener{
 
-                val localRepository = LocalRepository(LocalDb.getInstace(it.context))
-                var local : List<Local> = localRepository.getclienteconlocal(item.ClienteId)
-                if(local == null){
-                //    val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
-               // clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
+
+                val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
+                clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
+
+                //val localRepository = LocalRepository(LocalDb.getInstace(it.context))
+                //var local : List<Local> = localRepository.getclienteconlocal(item.ClienteId)
+               // if(local == null){
+
+
                 MaterialAlertDialogBuilder(it.context)
                     .setTitle(R.string.titulo)
                     .setMessage(R.string.mensajeeliminar)
                     .show()
 
-                }else{
-                    binding.mostranombreTextView.text = local.get(1).ClienteId.toString()
-                }
-
             }
+
             binding.mostranombreTextView.text = item.Nombre
             binding.mostrarapellidoTextView.text = item.Apellido
             binding.mostardireccionTextView.text = item.Dirrecion

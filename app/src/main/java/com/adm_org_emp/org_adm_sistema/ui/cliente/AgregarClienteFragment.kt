@@ -83,6 +83,8 @@ class AgregarClienteFragment : Fragment() {
         )
     }
 
+
+
     fun ModificarCliente(): Cliente{
 
         return Cliente(requireArguments().getLong("ClienteId"),
@@ -146,7 +148,5 @@ class AgregarClienteFragment : Fragment() {
         binding.DirrecionTextInputEditText.setText(arguments?.getString("Dirrecion"))
         binding.NumeroTelefonoTextInputEditText.setText(arguments?.getString("NumeroTelefono"))
         binding.ReferenciaTextInputEditText.setText(arguments?.getString("Referencia"))
-
     }
-
 }

@@ -19,7 +19,7 @@ class LocalRepository(private val database : LocalDb) {
         database.localDao.delete(local)
     }
 
-    fun allIngreso(): LiveData<List<Local>> {
+    fun allLocal(): LiveData<List<Local>> {
         return database.localDao.getAllLocal()
     }
 

@@ -22,4 +22,8 @@ interface ClienteDao {
     @Query("SELECT * FROM cliente ORDER BY ClienteId ASC")
     fun getAllCliente(): LiveData<List<Cliente>>
 
+    @Query("SELECT * FROM cliente ORDER BY ClienteId ASC")
+    fun getAllClienteSpinner(): List<Cliente>
+    //allClientespinner
+
 }
