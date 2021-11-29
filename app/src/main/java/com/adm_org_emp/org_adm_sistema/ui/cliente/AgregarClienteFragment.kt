@@ -73,6 +73,16 @@ class AgregarClienteFragment : Fragment() {
         }
     }
 
+    fun llenarcampos() {
+        //aqui se resiven los dato que vienen desde el adacter por medio de la
+        // clase bundle y se usa el metodo arguments para recuperrarlo
+        binding.NombreTextInputEditText.setText(arguments?.getString("Nombre"))
+        binding.ApellidoTextInputEditText.setText(arguments?.getString("Apellido"))
+        binding.DirrecionTextInputEditText.setText(arguments?.getString("Dirrecion"))
+        binding.NumeroTelefonoTextInputEditText.setText(arguments?.getString("NumeroTelefono"))
+        binding.ReferenciaTextInputEditText.setText(arguments?.getString("Referencia"))
+    }
+
     fun ClienteNuevo(): Cliente{
         return Cliente(0,
             binding.NombreTextInputEditText.text.toString(),
@@ -82,8 +92,6 @@ class AgregarClienteFragment : Fragment() {
             binding.ReferenciaTextInputEditText.text.toString()
         )
     }
-
-
 
     fun ModificarCliente(): Cliente{
 
@@ -140,13 +148,5 @@ class AgregarClienteFragment : Fragment() {
         return esValido
     }
 
-    fun llenarcampos() {
-        //aqui se resiven los dacto que vienen desde el adacter por medio de la
-        // clase bundle y se usa el metodo arguments para recuperrarlo
-        binding.NombreTextInputEditText.setText(arguments?.getString("Nombre"))
-        binding.ApellidoTextInputEditText.setText(arguments?.getString("Apellido"))
-        binding.DirrecionTextInputEditText.setText(arguments?.getString("Dirrecion"))
-        binding.NumeroTelefonoTextInputEditText.setText(arguments?.getString("NumeroTelefono"))
-        binding.ReferenciaTextInputEditText.setText(arguments?.getString("Referencia"))
-    }
+
 }

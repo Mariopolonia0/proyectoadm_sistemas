@@ -72,10 +72,17 @@ class LocalAdacter(): RecyclerView.Adapter<LocalAdacter.LocalViewHolder>()  {
             binding.NombretextViewlocal.text= item.Nombre
             binding.preciotextViewlocal.text = item.MontoRenta.toString()
             binding.tipotextViewlocal.text = item.TipoLocal
-            if(item.ClienteId.toInt() != 0){
-                binding.clientetextViewlocal.text = ClienteRepository(ClienteDb.getInstance(itemView.context)).buscarCliente(item.ClienteId).Nombre
+            if(item.ClienteId.toInt() > 0){
+                if (ClienteRepository(ClienteDb.getInstance(itemView.context)).buscarCliente(item.ClienteId)== null){
+                    binding.clientetextViewlocal.setText("No Tiene Cliente")
+                }else {
+                    binding.clientetextViewlocal.text =
+                        ClienteRepository(ClienteDb.getInstance(itemView.context)).buscarCliente(
+                            item.ClienteId
+                        ).Nombre
+                }
             }else
-                binding.clientetextViewlocal.text = "No Tiene Cliente"
+                    binding.clientetextViewlocal.setText("No Tiene Cliente")
         }
     }
 }

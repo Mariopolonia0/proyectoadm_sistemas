@@ -30,6 +30,8 @@
     <string name="mensajemodificar">Desea Modifico El Cliente </string>
     <string name="mensajeeliminar">Desea Eliminar El Cliente </string>
     <string name="mensajeagregarclientelocal">Desea Guardar El Local Sin Cliente</string>
+    <string name="DeseaGuardarElLocal">Desea Guardar El Local </string>
+
 
     <!--vista cliente-->
     <string name="nombrevistacliente">Nombre</string>
@@ -62,5 +64,11 @@
     <string name="FechaPagoRealizado">Fecha De Pago Realizado</string>
     <string name="TipoDePago">Tipo De Pago</string>
     <string name="MontoTotal">Monto Total</string>
+
+    <!-- registro AdateIngreso -->
+    <string name="clienteIdAdateIngreso">Cliente</string>
+    <string name="FechacumplidaAdateIngreso">Mes Cumplido </string>
+    <string name="montototalAdateIngreso">Monto Total</string>
+
 
 </resources>

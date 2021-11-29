@@ -1,28 +1,30 @@
 package com.adm_org_emp.org_adm_sistema.ui.local
 
-import android.app.AlertDialog
+
 import android.app.DatePickerDialog
+
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.adm_org_emp.org_adm_sistema.R
 import com.adm_org_emp.org_adm_sistema.databinding.EditalLocalFragmentBinding
 import com.adm_org_emp.org_adm_sistema.models.Cliente
+import com.adm_org_emp.org_adm_sistema.models.Ingreso
 import com.adm_org_emp.org_adm_sistema.models.Local
 import com.adm_org_emp.org_adm_sistema.ui.getDouble
 import com.adm_org_emp.org_adm_sistema.ui.getFloat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.sql.Date
+import java.text.DateFormat
 import java.util.*
+import kotlin.time.days
 
 
 class EditalLocalFragment : Fragment(){
@@ -50,35 +52,90 @@ class EditalLocalFragment : Fragment(){
 
         llenarspiner()
         agregarfecha()
-        llenarcampos()
-
+        if(arguments?.getString("Nombre") != null)
+            llenarcampos()
 
         binding.floatingActionButtonAgregarLocal.setOnClickListener() {
 
-
-            if (Validar() )
+            if (Validar())
             {
-                val a = MaterialAlertDialogBuilder(it.context)
-                a.setTitle(R.string.titulo)
-                a.setMessage(R.string.mensajeagregarclientelocal)
-                a.setIcon(R.drawable.ic_klk)
-                a.setPositiveButton("Aceptar"){dialog,which->
+                if (binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toInt() > 0){
+                    val a = MaterialAlertDialogBuilder(it.context)
+                    a.setTitle(R.string.titulo)
+                    a.setMessage(R.string.DeseaGuardarElLocal)
+                    a.setIcon(R.drawable.ic_info)
+                    a.setPositiveButton(""){dialog,which->
+                        guardarlocal()
+                    }
+                    a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
+                    a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))
+                    a.setNegativeButton(""){dialog,which ->
+                    }
+                    a.setCancelable(false)
+                    a.show()
+                }else{
+                    val a = MaterialAlertDialogBuilder(it.context)
+                    a.setTitle(R.string.titulo)
+                    a.setMessage(R.string.mensajeagregarclientelocal)
+                    a.setIcon(R.drawable.ic_info)
+                    a.setPositiveButton(""){dialog,which->
+                        guardarlocal()
+                    }
+                    a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
+                    a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))
+                    a.setNegativeButton(""){
+                            dialog,which ->
+                    }
+                    a.setCancelable(false)
+                    a.show()
 
-
-
-                            viewModel.Insert(llenarLocal())
-                            findNavController().navigateUp()
                 }
-                a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_klk) )
-                a.setNegativeButton("Cancelar"){
-                        dialog,which ->
-                }
-                a.setCancelable(false)
-                a.show()
-            }else{
-
             }
         }
+    }
+    fun guardarlocal(){
+        if(arguments?.getString("Nombre") == null){
+            viewModel.Insert(llenarLocal(0))
+            crearIngreso()
+            findNavController().navigateUp()
+        }else{
+            viewModel.Update(llenarLocal(requireArguments().getLong("LocalId")))
+            findNavController().navigateUp()
+        }
+    }
+
+    fun calcularfechacumplirfactura (): String{
+        val calendar = Calendar.getInstance()
+       // calendar.set(2020,8,1)
+        calendar.set(
+            binding.fecharegistrotextedit.text.toString().split("/").get(2).toInt(),
+            binding.fecharegistrotextedit.text.toString().split("/").get(1).toInt(),
+            binding.fecharegistrotextedit.text.toString().split("/").get(0).toInt()
+        )
+        calendar.add(Calendar.DAY_OF_YEAR,15)
+        return String.format("%d/%d/%d",calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR))
+    }
+
+    fun crearIngreso():Ingreso{
+        return Ingreso(0,
+            binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toLong(),
+            calcularfechacumplirfactura(),
+            "/0/0/0",
+            0.0,
+        )
+    }
+
+
+
+     fun llenarLocal(localId:Long):Local{
+        return Local(
+            localId,
+            binding.NombreLocaltextInput.text.toString(),
+            binding.MontorentatextInputLocal.text.getDouble(),
+            binding.tipolocaltextInput.text.toString(),
+            binding.fecharegistrotextedit.text.toString(),
+            binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toLong()
+        )
     }
 
     fun llenarcampos(){
@@ -87,18 +144,6 @@ class EditalLocalFragment : Fragment(){
         binding.tipolocaltextInput.setText(arguments?.getString("TipoLocal"))
         binding.fecharegistrotextedit.setText(arguments?.getString("FechaRegistro"))
         binding.spinnerlistacliente.setSelection(arguments?.getString("ClienteId")!!.toInt())
-
-    }
-
-    fun llenarLocal():Local{
-        return Local(
-            0,
-            binding.NombreLocaltextInput.text.toString(),
-            binding.MontorentatextInputLocal.text.getDouble(),
-            binding.tipolocaltextInput.text.toString(),
-            binding.fecharegistrotextedit.text.toString(),
-            binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toLong()
-        )
     }
 
     fun llenarspiner(){
@@ -149,43 +194,23 @@ class EditalLocalFragment : Fragment(){
         return esValido
     }
 
-
     fun agregarfecha(){
+
+
         val mcurrentTime = Calendar.getInstance()
         val year = mcurrentTime.get(Calendar.YEAR)
         val month = mcurrentTime.get(Calendar.MONTH)
         val day = mcurrentTime.get(Calendar.DAY_OF_MONTH)
 
-//        binding.fecharegistrotextedit.setOnFocusChangeListener{
-//            binding,hasFocus ->
-//            if (hasFocus){
-//                //Toast.makeText(activity,"klk",Toast.LENGTH_LONG)
-//            }
-//
-//
-//        }
-
-
         binding.fecharegistrotextedit.setOnClickListener(){
             val datePicker = DatePickerDialog(it.context,android.R.style.ThemeOverlay_Material_Dialog, object : DatePickerDialog.OnDateSetListener {
                 override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-                    binding.fecharegistrotextedit.setText(String.format("%d / %d / %d", dayOfMonth, month + 1, year))
+                    binding.fecharegistrotextedit.setText(String.format("%d/%d/%d", dayOfMonth, month + 1, year))
                 }
             }, year, month, day);
-
             datePicker.show()
         }
     }
-
-
 }
 
 
-
-//binding.spinnerclientevisa.selectedItem.toString().split(" ").get(0)
-// binding.MontorentatextInputLocal.text.toString().toDouble().toString()
-
-//        binding.spinnerclientevisa.let {
-//            if(it.selectedItemId.toInt() == 0)
-//                esValido = false
-//        }
