@@ -22,10 +22,6 @@ class AgregarClienteViewModel(app: Application) : ViewModel() {
     fun Update (cliente:Cliente) = viewModelScope.launch {
         clienteRopository.update(cliente)
     }
-    fun Delete (cliente:Cliente) = viewModelScope.launch {
-        clienteRopository.delete(cliente)
-    }
-
 
     class Factory (val app: Application): ViewModelProvider.Factory{
         override fun <T : ViewModel> create(modelClass: Class<T>): T {

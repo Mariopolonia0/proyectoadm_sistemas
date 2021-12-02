@@ -21,10 +21,8 @@ import com.adm_org_emp.org_adm_sistema.models.Local
 import com.adm_org_emp.org_adm_sistema.ui.getDouble
 import com.adm_org_emp.org_adm_sistema.ui.getFloat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import java.sql.Date
-import java.text.DateFormat
 import java.util.*
-import kotlin.time.days
+
 
 
 class EditalLocalFragment : Fragment(){
@@ -88,16 +86,22 @@ class EditalLocalFragment : Fragment(){
                     }
                     a.setCancelable(false)
                     a.show()
-
                 }
             }
         }
     }
+
     fun guardarlocal(){
         if(arguments?.getString("Nombre") == null){
-            viewModel.Insert(llenarLocal(0))
-            crearIngreso()
-            findNavController().navigateUp()
+            if (binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toInt() > 0){
+                viewModel.Insert(llenarLocal(0))
+                viewModel.InsetIngreso(crearIngreso())
+                findNavController().navigateUp()
+            }else{
+                viewModel.Insert(llenarLocal(0))
+                findNavController().navigateUp()
+            }
+
         }else{
             viewModel.Update(llenarLocal(requireArguments().getLong("LocalId")))
             findNavController().navigateUp()
@@ -106,13 +110,12 @@ class EditalLocalFragment : Fragment(){
 
     fun calcularfechacumplirfactura (): String{
         val calendar = Calendar.getInstance()
-       // calendar.set(2020,8,1)
         calendar.set(
             binding.fecharegistrotextedit.text.toString().split("/").get(2).toInt(),
             binding.fecharegistrotextedit.text.toString().split("/").get(1).toInt(),
             binding.fecharegistrotextedit.text.toString().split("/").get(0).toInt()
         )
-        calendar.add(Calendar.DAY_OF_YEAR,15)
+        calendar.add(Calendar.DAY_OF_YEAR,30)
         return String.format("%d/%d/%d",calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR))
     }
 
@@ -124,8 +127,6 @@ class EditalLocalFragment : Fragment(){
             0.0,
         )
     }
-
-
 
      fun llenarLocal(localId:Long):Local{
         return Local(

@@ -20,8 +20,8 @@
         android:label="@string/menu_Ingreso"
         tools:layout="@layout/ingreso_fragment" >
         <action
-            android:id="@+id/action_ingresoFragment_to_editarIngreso"
-            app:destination="@id/editarIngreso" />
+            android:id="@+id/action_ingresoFragment_to_cobrarIngresoFragment"
+            app:destination="@id/cobrarIngresoFragment" />
     </fragment>
     <fragment
         android:id="@+id/localFragment"
@@ -46,8 +46,8 @@
         android:label="@string/TituloFramerEditarLocal"
         tools:layout="@layout/edital_local_fragment" />
     <fragment
-        android:id="@+id/editarIngreso"
-        android:name="com.adm_org_emp.org_adm_sistema.ui.ingreso.EditarIngreso"
-        android:label="editar_ingreso_fragment"
-        tools:layout="@layout/editar_ingreso_fragment" />
+        android:id="@+id/cobrarIngresoFragment"
+        android:name="com.adm_org_emp.org_adm_sistema.ui.ingreso.CobrarIngresoFragment"
+        android:label="@string/tituloventacobrardfactura"
+        tools:layout="@layout/cobrar_ingreso_fragment" />
 </navigation>

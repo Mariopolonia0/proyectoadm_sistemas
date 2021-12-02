@@ -24,6 +24,4 @@ interface ClienteDao {
 
     @Query("SELECT * FROM cliente ORDER BY ClienteId ASC")
     fun getAllClienteSpinner(): List<Cliente>
-    //allClientespinner
-
 }

@@ -11,7 +11,7 @@
         <item
             android:id="@+id/ingresoFragment"
             android:icon="@drawable/ic_menu_ingreso"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_Ingreso" />
         <item
             android:id="@+id/localFragment"
             android:icon="@drawable/ic_menu_local"

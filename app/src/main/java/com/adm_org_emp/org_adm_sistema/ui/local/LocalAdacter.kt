@@ -52,23 +52,6 @@ class LocalAdacter(): RecyclerView.Adapter<LocalAdacter.LocalViewHolder>()  {
             binding.imageButtonModicarLocal.setOnClickListener{
                 binding.root.findNavController().navigate(R.id.action_localFragment_to_editalLocalFragment,bundle)
             }
-//
-//            binding.imageButtonDelete.setOnClickListener{
-//
-//                val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
-//                clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
-//
-//                //val localRepository = LocalRepository(LocalDb.getInstace(it.context))
-//                //var local : List<Local> = localRepository.getclienteconlocal(item.ClienteId)
-//                // if(local == null){
-//
-//
-//                MaterialAlertDialogBuilder(it.context)
-//                    .setTitle(R.string.titulo)
-//                    .setMessage(R.string.mensajeeliminar)
-//                    .show()
-//
-//            }
             binding.NombretextViewlocal.text= item.Nombre
             binding.preciotextViewlocal.text = item.MontoRenta.toString()
             binding.tipotextViewlocal.text = item.TipoLocal

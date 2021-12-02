@@ -2,17 +2,15 @@
     <string name="app_name">org_adm_sistema</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Organizacion Administracion De Sistemas</string>
+    <string name="nav_header_subtitle">mariopolonia0@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
     <string name="menu_Cliente">Cliente</string>
     <string name="menu_Local">Local</string>
     <string name="menu_Ingreso">Ingreso</string>
     <string name="nullimagen">null</string>
-
 
     <!-- registro Clientes -->
     <string name="TituloFramerEditarCliente">Editar Cliente</string>
@@ -32,23 +30,24 @@
     <string name="mensajeagregarclientelocal">Desea Guardar El Local Sin Cliente</string>
     <string name="DeseaGuardarElLocal">Desea Guardar El Local </string>
 
-
     <!--vista cliente-->
     <string name="nombrevistacliente">Nombre</string>
     <string name="Dirrecionvistacliente">Dirrecion</string>
     <string name="NumeroTelefonovistacliente">Numero Telefono</string>
 
-
-
     <!--vista local-->
     <string name="nombrevistalocal">Nombre</string>
     <string name="MontovistaLocal">Precio</string>
+    <string name="fechapago">Fecha Registro</string>
+    <string name="tipopago">Tipo Pago</string>
+
+    <!--Cobrar facturaas -->
+    <string name="tituloventacobrardfactura">Cobrar Factura</string>
     <string name="TipoLocalvista">Tipo</string>
     <string name="fecharegistroLocal">Fecha Registro</string>
     <string name="clienteLocal">Inquilino</string>
 
-
-    <!-- registro Local -->
+    <!--Editar local -->
     <string name="TituloFramerEditarLocal">Editar Local</string>
     <string name="textNombreLocal">Nombre</string>
     <string name="textMontoRentaLocal">Monto Renta</string>
@@ -69,6 +68,5 @@
     <string name="clienteIdAdateIngreso">Cliente</string>
     <string name="FechacumplidaAdateIngreso">Mes Cumplido </string>
     <string name="montototalAdateIngreso">Monto Total</string>
-
 
 </resources>

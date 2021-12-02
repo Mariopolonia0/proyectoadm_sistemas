@@ -17,14 +17,13 @@ interface LocalDao {
     @Delete
     fun delete(local: Local)
 
-    @Query("SELECT * FROM local WHERE LocalId= :key")
+    @Query("SELECT * FROM Local WHERE LocalId= :key")
     fun find(key :Long): Local
 
-    @Query("SELECT * FROM local ORDER BY LocalId DESC")
+    @Query("SELECT * FROM Local ORDER BY LocalId DESC")
     fun getAllLocal(): LiveData<List<Local>>
 
-    @Query("SELECT * FROM local WHERE ClienteId = :key")
-    fun getclienteconlocal(key: Long): List<Local>
-
+    @Query("SELECT * FROM Local WHERE ClienteId = :key")
+    fun getclienteconlocal(key:Int): List<Local>
 
 }

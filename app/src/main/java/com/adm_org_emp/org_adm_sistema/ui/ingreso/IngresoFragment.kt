@@ -6,13 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.adm_org_emp.org_adm_sistema.R
+import com.adm_org_emp.org_adm_sistema.databinding.IngresoFragmentBinding
 
 class IngresoFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = IngresoFragment()
-    }
+    private var _binding : IngresoFragmentBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var viewModel: IngresoViewModel
 
@@ -20,13 +19,25 @@ class IngresoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.ingreso_fragment, container, false)
+        _binding = IngresoFragmentBinding.inflate(inflater,container,false)
+        viewModel =
+            ViewModelProvider(this,IngresoViewModel.Factory(requireActivity().application))
+                .get(IngresoViewModel::class.java)
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(IngresoViewModel::class.java)
         // TODO: Use the ViewModel
+
+        binding.listaIngresoRecyclerView.adapter = IngresoAdcter()
+        val adater = binding.listaIngresoRecyclerView.adapter as IngresoAdcter
+
+        viewModel.listaIngreso.observe(viewLifecycleOwner,{
+            adater.submitList(it)
+        })
     }
 
 }

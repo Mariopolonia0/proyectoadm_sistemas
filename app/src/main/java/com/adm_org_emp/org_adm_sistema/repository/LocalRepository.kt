@@ -23,7 +23,7 @@ class LocalRepository(private val database : LocalDb) {
         return database.localDao.getAllLocal()
     }
 
-    fun getclienteconlocal(key : Long): List<Local> {
-        return database.localDao.getclienteconlocal(key)
+    fun getclienteconlocal(clienteid :Int): List<Local> {
+        return database.localDao.getclienteconlocal(clienteid)
     }
 }

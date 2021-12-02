@@ -59,14 +59,8 @@ class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>() 
 
             binding.imageButtonDelete.setOnClickListener{
 
-
                 val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
                 clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
-
-                //val localRepository = LocalRepository(LocalDb.getInstace(it.context))
-                //var local : List<Local> = localRepository.getclienteconlocal(item.ClienteId)
-               // if(local == null){
-
 
                 MaterialAlertDialogBuilder(it.context)
                     .setTitle(R.string.titulo)
