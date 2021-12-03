@@ -23,4 +23,8 @@ class IngresoRepository(private val database :IngresoDb) {
     fun allIngreso(): LiveData<List<Ingreso>> {
         return database.ingresoDao.getAllIngreso()
     }
+
+    fun buscarIngresocliente(clienteId :Int):List<Ingreso> {
+        return database.ingresoDao.clienteingreso(clienteId)
+    }
 }

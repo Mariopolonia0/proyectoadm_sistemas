@@ -36,6 +36,10 @@ class EditalLocalViewModel(app: Application) : ViewModel() {
         ingresoRopository.insert(ingreso)
     }
 
+    fun buscarIngresocliente (clienteId:Int) :List<Ingreso>{
+       return ingresoRopository.buscarIngresocliente(clienteId)
+    }
+
     // TODO: Implement the ViewModel
 
     class Factory (val app: Application): ViewModelProvider.Factory{

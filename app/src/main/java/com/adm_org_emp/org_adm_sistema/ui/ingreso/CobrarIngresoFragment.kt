@@ -45,7 +45,6 @@ class CobrarIngresoFragment : Fragment() {
         val adater = binding.listalocalrecycleviewcobro.adapter as CobroAdater
         adater.submitList(viewModel.localcliente(binding.textViewClientecobro.text.toString().toInt()))
 
-
         binding.textViewmontototal.setText(calcularmonto())
         llenarspiner()
     }
@@ -53,11 +52,9 @@ class CobrarIngresoFragment : Fragment() {
     fun calcularmonto():String {
 
         val listalocal : List<Local> =viewModel.localcliente(binding.textViewClientecobro.text.toString().toInt())
-        //val listalocal =viewModel.getlocal
 
         var total = 0.0
         for (i in listalocal.indices){
-           Log.i("hola",requireArguments().getLong("ClienteId").toString())
             total = total + listalocal.get(i).MontoRenta
         }
         return total.toString()

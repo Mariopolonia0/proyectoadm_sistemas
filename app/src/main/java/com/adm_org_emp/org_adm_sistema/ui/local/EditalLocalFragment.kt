@@ -14,10 +14,12 @@ import android.widget.DatePicker
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.navigation.fragment.findNavController
 import com.adm_org_emp.org_adm_sistema.R
+import com.adm_org_emp.org_adm_sistema.data.IngresoDb
 import com.adm_org_emp.org_adm_sistema.databinding.EditalLocalFragmentBinding
 import com.adm_org_emp.org_adm_sistema.models.Cliente
 import com.adm_org_emp.org_adm_sistema.models.Ingreso
 import com.adm_org_emp.org_adm_sistema.models.Local
+import com.adm_org_emp.org_adm_sistema.repository.IngresoRepository
 import com.adm_org_emp.org_adm_sistema.ui.getDouble
 import com.adm_org_emp.org_adm_sistema.ui.getFloat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -95,7 +97,9 @@ class EditalLocalFragment : Fragment(){
         if(arguments?.getString("Nombre") == null){
             if (binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toInt() > 0){
                 viewModel.Insert(llenarLocal(0))
-                viewModel.InsetIngreso(crearIngreso())
+                if(viewModel.buscarIngresocliente(binding.spinnerlistacliente.selectedItem.toString().split(" ").get(0).toInt()).size == 0  )
+                    viewModel.InsetIngreso(crearIngreso())
+
                 findNavController().navigateUp()
             }else{
                 viewModel.Insert(llenarLocal(0))
@@ -196,7 +200,6 @@ class EditalLocalFragment : Fragment(){
     }
 
     fun agregarfecha(){
-
 
         val mcurrentTime = Calendar.getInstance()
         val year = mcurrentTime.get(Calendar.YEAR)

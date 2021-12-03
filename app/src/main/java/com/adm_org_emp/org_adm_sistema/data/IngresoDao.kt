@@ -17,7 +17,10 @@ interface IngresoDao {
     fun delete(ingreso: Ingreso)
 
     @Query("SELECT * FROM ingreso WHERE IngresoId= :key")
-    fun find(key :Long): Ingreso
+    fun find(key :Int): Ingreso
+
+    @Query("SELECT * FROM ingreso WHERE ClienteId= :key")
+    fun clienteingreso(key :Int): List<Ingreso>
 
     @Query("SELECT * FROM ingreso ORDER BY IngresoId DESC")
     fun getAllIngreso(): LiveData<List<Ingreso>>
