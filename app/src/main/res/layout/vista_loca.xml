@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_border">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/nombrevistalocal"
         android:textColor="#000000"
@@ -18,10 +20,12 @@
 
     <TextView
         android:id="@+id/NombretextViewlocal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
+        android:textColor="#673AB7"
         android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonDeleteLocal"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
@@ -29,6 +33,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/textTipoLocal"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +41,12 @@
 
     <TextView
         android:id="@+id/tipotextViewlocal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
+        android:textColor="#673AB7"
         android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonDeleteLocal"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -47,18 +54,23 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/MontovistaLocal"
         android:textColor="#000000"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/clientetextViewlocal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="#673AB7"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tipotextViewlocal"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toTopOf="@+id/textView14" />
 
@@ -66,6 +78,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/clienteLocal"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -74,10 +87,12 @@
 
     <TextView
         android:id="@+id/preciotextViewlocal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
+        android:textColor="#673AB7"
         android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonDeleteLocal"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
@@ -95,6 +110,7 @@
         android:id="@+id/imageButtonModicarLocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

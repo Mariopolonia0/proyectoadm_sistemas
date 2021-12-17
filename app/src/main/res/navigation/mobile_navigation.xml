@@ -9,7 +9,7 @@
         android:id="@+id/clienteFragment"
         android:name="com.adm_org_emp.org_adm_sistema.ui.cliente.ClienteFragment"
         android:label="@string/menu_Cliente"
-        tools:layout="@layout/cliente_fragment" >
+        tools:layout="@layout/cliente_fragment">
         <action
             android:id="@+id/action_clienteFragment_to_agregarClienteFragment"
             app:destination="@id/agregarClienteFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/ingresoFragment"
         android:name="com.adm_org_emp.org_adm_sistema.ui.ingreso.IngresoFragment"
         android:label="@string/menu_Ingreso"
-        tools:layout="@layout/ingreso_fragment" >
+        tools:layout="@layout/ingreso_fragment">
         <action
             android:id="@+id/action_ingresoFragment_to_cobrarIngresoFragment"
             app:destination="@id/cobrarIngresoFragment" />
@@ -27,7 +27,7 @@
         android:id="@+id/localFragment"
         android:name="com.adm_org_emp.org_adm_sistema.ui.local.LocalFragment"
         android:label="@string/menu_Local"
-        tools:layout="@layout/local_fragment" >
+        tools:layout="@layout/local_fragment">
         <action
             android:id="@+id/action_localFragment_to_editalLocalFragment"
             app:destination="@id/editalLocalFragment"

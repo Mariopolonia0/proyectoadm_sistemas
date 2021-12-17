@@ -1,13 +1,17 @@
 package com.adm_org_emp.org_adm_sistema.ui.cliente
 
 import android.app.AlertDialog
+import android.content.pm.PackageManager
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.adm_org_emp.org_adm_sistema.R
 import com.adm_org_emp.org_adm_sistema.databinding.AgregarClienteFragmentBinding
@@ -22,6 +26,7 @@ class AgregarClienteFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: AgregarClienteViewModel
+
 
 
     override fun onCreateView(
@@ -72,6 +77,8 @@ class AgregarClienteFragment : Fragment() {
             }
         }
     }
+
+
 
     fun llenarcampos() {
         //aqui se resiven los dato que vienen desde el adacter por medio de la

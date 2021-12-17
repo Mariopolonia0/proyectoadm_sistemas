@@ -29,9 +29,11 @@ class EditalLocalViewModel(app: Application) : ViewModel() {
     fun Insert(local: Local)= viewModelScope.launch {
         localRopository.insert(local)
     }
+
     fun Update (local: Local) = viewModelScope.launch {
         localRopository.update(local)
     }
+
     fun InsetIngreso (ingreso:Ingreso) = viewModelScope.launch {
         ingresoRopository.insert(ingreso)
     }

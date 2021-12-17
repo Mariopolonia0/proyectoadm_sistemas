@@ -66,6 +66,7 @@ class EditalLocalFragment : Fragment(){
                     a.setIcon(R.drawable.ic_info)
                     a.setPositiveButton(""){dialog,which->
                         guardarlocal()
+                        findNavController().navigateUp()
                     }
                     a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
                     a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))
@@ -80,6 +81,7 @@ class EditalLocalFragment : Fragment(){
                     a.setIcon(R.drawable.ic_info)
                     a.setPositiveButton(""){dialog,which->
                         guardarlocal()
+                        findNavController().navigateUp()
                     }
                     a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
                     a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))

@@ -2,6 +2,7 @@ package com.adm_org_emp.org_adm_sistema.ui.cliente
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.navigation.findNavController
@@ -59,13 +60,21 @@ class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>() 
 
             binding.imageButtonDelete.setOnClickListener{
 
-                val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
-                clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
-
-                MaterialAlertDialogBuilder(it.context)
-                    .setTitle(R.string.titulo)
-                    .setMessage(R.string.mensajeeliminar)
-                    .show()
+                val a = MaterialAlertDialogBuilder(it.context)
+                a.setTitle(R.string.titulo)
+                a.setMessage(R.string.mensajeeliminar)
+                a.setIcon(R.drawable.ic_info)
+                a.setPositiveButton(""){dialog,which->
+                    val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
+                    clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
+                }
+                a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
+                a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))
+                a.setNegativeButton(""){
+                        dialog,which ->
+                }
+                a.setCancelable(false)
+                a.show()
 
             }
 

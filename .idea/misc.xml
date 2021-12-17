@@ -6,8 +6,12 @@
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2890625" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_aceptar.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_cancelar.xml" value="0.23125" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_cobrar_factura.xml" value="0.3671875" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_delete.xml" value="0.2864583333333333" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_editar_registro.xml" value="0.2864583333333333" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_guardar.xml" value="0.20625" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_icono_guardar.xml" value="0.18125" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_info.xml" value="0.2864583333333333" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_klk.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_logo_agregar.xml" value="0.23177083333333334" />
@@ -18,13 +22,15 @@
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_probar1.xml" value="0.18125" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_tractor.xml" value="0.2890625" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_twotone_delete_24.xml" value="0.18125" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/ic_twotone_print_24.xml" value="0.3671875" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/list_border.xml" value="0.3671875" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/drawable/side_nav_bar.xml" value="0.2890625" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/agregar_cliente_fragment.xml" value="0.2" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/cliente_fragment.xml" value="0.14" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/cliente_speener.xml" value="0.25" />
-        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/cobrar_ingreso_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/cobrar_ingreso_fragment.xml" value="0.5" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/content_main.xml" value="0.19882246376811594" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/edital_local_fragment.xml" value="0.25" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/editar_ingreso_fragment.xml" value="0.25" />
@@ -37,7 +43,7 @@
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/vista_cliente.xml" value="0.41255961844197137" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/vista_cobro.xml" value="0.33" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/vista_ingreso.xml" value="0.5" />
-        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/vista_loca.xml" value="0.33" />
+        <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/layout/vista_loca.xml" value="0.5" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/menu/activity_main_drawer.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/menu/main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mario/AndroidStudioProjects/org_adm_sistema/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15885416666666666" />
