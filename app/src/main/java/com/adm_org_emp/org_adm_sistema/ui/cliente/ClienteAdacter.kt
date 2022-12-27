@@ -68,7 +68,6 @@ class ClienteAdacter():RecyclerView.Adapter<ClienteAdacter.ClienteViewHolder>() 
                     val clienteRepositorio = ClienteRepository(ClienteDb.getInstance(it.context))
                     clienteRepositorio.delete(Cliente(item.ClienteId,item.Nombre,item.Apellido,item.Dirrecion,item.NumeroTelefono,item.Referencia))
                 }
-                a.setPositiveButtonIcon( getDrawable(it.context,R.drawable.ic_aceptar))
                 a.setNegativeButtonIcon(getDrawable(it.context,R.drawable.ic_cancelar))
                 a.setNegativeButton(""){
                         dialog,which ->

@@ -153,7 +153,7 @@ class CobrarIngresoFragment : Fragment() {
         MaterialAlertDialogBuilder(binding.root.context)
             .setTitle(resources.getString(R.string.titulo))
             .setMessage("Se Imprimio el PDF")
-            .setPositiveButtonIcon(getDrawable(binding.root.context,R.drawable.ic_aceptar))
+            .setPositiveButtonIcon(getDrawable(binding.root.context,R.drawable.ic_cobrar_factura))
             .setPositiveButton(""){dialog,which->
                 findNavController().navigateUp()
             }
